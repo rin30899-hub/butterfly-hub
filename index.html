@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Butterfly Hub — Home</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <link href="assets/css/styles.css" rel="stylesheet"/>
+
+  <style>
+    /* --- Visual upgrades (home only) --- */
+    .hero-visual {
+      position: relative;
+      min-height: 62vh;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background:
+        linear-gradient(200deg, rgba(21,115,71,.75), rgba(21,115,71,.35) 35%, rgba(0,0,0,.35)),
+        url("14153995969-swallowtail-papilio-machaon.jpg") center/cover no-repeat fixed;
+    }
+    .hero-visual .hero-inner { text-align: center; max-width: 820px; padding: 5rem 1rem; }
+    .hero-kicker { letter-spacing: .12em; text-transform: uppercase; opacity: .9; font-weight: 600; }
+    .hero-visual .display-5 { text-shadow: 0 6px 26px rgba(0,0,0,.35); }
+    .sparkle {
+      position: relative;
+      isolation: isolate;
+    }
+    .sparkle::after {
+      content: "";
+      position: absolute; inset: -6px;
+      background: radial-gradient(closest-side, rgba(255,255,255,.35), transparent 70%);
+      filter: blur(10px); opacity: .35; z-index: -1;
+      animation: shimmer 4s ease-in-out infinite;
+    }
+    @keyframes shimmer { 0%,100%{transform: translateX(-6px)} 50%{transform: translateX(6px)} }
+
+    /* Stats strip */
+    .stats-strip { background: var(--pale); }
+    .stat {
+      display:flex; align-items:center; gap:.75rem;
+      padding: .85rem 0;
+    }
+    .stat i { font-size: 1.4rem; }
+
+    /* Feature icons */
+    .feature-icon {
+      width: 56px; height:56px; border-radius: 14px;
+      display:grid; place-items:center; background:#fff; box-shadow: 0 6px 20px rgba(0,0,0,.06);
+    }
+
+    /* Card images */
+    .card-img-top { height: 200px; object-fit: cover; }
+
+    /* Newsletter */
+    .nl {
+      background: linear-gradient(180deg, rgba(21,115,71,.08), rgba(21,115,71,.02));
+      border: 1px solid rgba(21,115,71,.12);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar (with logo) -->
+  <nav class="navbar navbar-expand-lg brand-bar">
+    <div class="container nav-gap">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Bluesky_butterfly-logo.svg"
+             alt="Butterfly Hub logo" style="height:28px;width:auto;">
+        <span>Butterfly Hub</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="mainNav" class="collapse navbar-collapse">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="donate.html">Donate</a></li>
+          <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+          
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search products/services" aria-label="Search">
+          <button class="btn btn-light" type="button">Search</button>
+        </form>
+        <span class="navbar-text ms-3">Status: <strong>Not logged in</strong></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero-visual border-bottom">
+    <div class="hero-inner">
+      <div class="hero-kicker mb-2">Explore • Protect • Celebrate</div>
+      <h1 class="display-5 fw-bold mb-3 sparkle">Welcome to Butterfly Hub</h1>
+      <p class="lead mx-auto mb-4">
+        Memberships, gear, and guides for butterfly lovers. Browse species, catch up on the latest news,
+        and get involved with community events and conservation.
+      </p>
+      <div class="d-flex flex-wrap justify-content-center gap-2">
+        <a class="btn btn-success btn-lg" href="products.html"><i class="bi bi-bag"></i> Shop Featured</a>
+        <a class="btn btn-outline-light btn-lg" href="donate.html"><i class="bi bi-heart"></i> Support the Hub</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Stats strip -->
+  <section class="stats-strip py-3">
+    <div class="container">
+      <div class="row row-cols-2 row-cols-md-4 g-3 text-center">
+        <div class="col">
+          <div class="stat justify-content-center"><i class="bi bi-flower3"></i><div><strong>120+</strong><br><small>Species in Guide</small></div></div>
+        </div>
+        <div class="col">
+          <div class="stat justify-content-center"><i class="bi bi-people"></i><div><strong>2,500+</strong><br><small>Community Members</small></div></div>
+        </div>
+        <div class="col">
+          <div class="stat justify-content-center"><i class="bi bi-calendar-event"></i><div><strong>30+</strong><br><small>Events / Year</small></div></div>
+        </div>
+        <div class="col">
+          <div class="stat justify-content-center"><i class="bi bi-globe2"></i><div><strong>AU Focus</strong><br><small>Local Conservation</small></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured carousel -->
+  <section class="container my-5">
+    <div class="d-flex align-items-end justify-content-between mb-3">
+      <h2 class="h4 m-0">Featured Gear</h2>
+      <a class="btn btn-sm btn-outline-success" href="products.html">View all</a>
+    </div>
+
+    <div id="featCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card h-100">
+                <img src="17243011130-dingy-skipper-erynnis-tages.jpg" class="card-img-top" alt="Dingy Skipper guide">
+                <div class="card-body">
+                  <h5 class="card-title">Field Guide</h5>
+                  <p class="card-text">Pocket-sized guide with 120+ species, quick IDs, and range maps.</p>
+                  <a class="btn btn-outline-success" href="#">View</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 d-none d-md-block">
+              <div class="card h-100">
+                <img src="https://hips.hearstapps.com/hmg-prod/images/pentax-ad-7x32-ed-binoculars-018-66d76c2eea1c8.jpg?crop=0.453xw:0.680xh;0.148xw,0.186xh&resize=1200:*" class="card-img-top" alt="Binoculars product">
+                <div class="card-body">
+                  <h5 class="card-title">Binoculars</h5>
+                  <p class="card-text">Crisp 8× optics with anti-glare coatings—perfect for field days.</p>
+                  <a class="btn btn-outline-success" href="#">View</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 d-none d-md-block">
+              <div class="card h-100">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD2fBKW0JCZY9SejC17NBpa2DtqTxamDbOKw&s" class="card-img-top" alt="Collector net">
+                <div class="card-body">
+                  <h5 class="card-title">Collector Net</h5>
+                  <p class="card-text">Lightweight, durable, and beginner friendly construction.</p>
+                  <a class="btn btn-outline-success" href="#">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 (reuse your home cards) -->
+        <div class="carousel-item">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card h-100">
+                <img src="14153995969-swallowtail-papilio-machaon.jpg" class="card-img-top" alt="Swallowtail">
+                <div class="card-body">
+                  <h5 class="card-title">Latest News</h5>
+                  <p class="card-text">Spring migration calendar released—see the best dates.</p>
+                  <a href="news.html" class="btn btn-outline-success">Read more</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 d-none d-md-block">
+              <div class="card h-100">
+                <img src="41714057085-grizzled-skipper.jpg" class="card-img-top" alt="Grizzled Skipper">
+                <div class="card-body">
+                  <h5 class="card-title">Join the Club</h5>
+                  <p class="card-text">Newsletter, events, and partner discounts for members.</p>
+                  <a href="contact.html" class="btn btn-outline-success">Contact us</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 d-none d-md-block">
+              <div class="card h-100">
+                <img src="17243011130-dingy-skipper-erynnis-tages.jpg" class="card-img-top" alt="Support FAQs">
+                <div class="card-body">
+                  <h5 class="card-title">Support & FAQs</h5>
+                  <p class="card-text">Order help and identification tips from our community.</p>
+                  <a href="supports.html" class="btn btn-outline-success">Browse support</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#featCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#featCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Why choose us -->
+  <section class="container my-5">
+    <div class="text-center mb-4">
+      <h2 class="h4">Why Butterfly Hub?</h2>
+      <p class="text-muted m-0">Curated gear, local knowledge, and a friendly community.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="d-flex align-items-start gap-3">
+          <div class="feature-icon"><i class="bi bi-badge-ad"></i></div>
+          <div>
+            <h5 class="mb-1">Trusted Picks</h5>
+            <p class="text-muted mb-0">Products reviewed by enthusiasts and field leaders.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="d-flex align-items-start gap-3">
+          <div class="feature-icon"><i class="bi bi-map"></i></div>
+          <div>
+            <h5 class="mb-1">Local Focus</h5>
+            <p class="text-muted mb-0">Tips and events tailored to Australian habitats.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="d-flex align-items-start gap-3">
+          <div class="feature-icon"><i class="bi bi-heart"></i></div>
+          <div>
+            <h5 class="mb-1">Community First</h5>
+            <p class="text-muted mb-0">Workshops, meetups, and conservation projects.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial + Newsletter -->
+  <section class="container my-5">
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">What members say</h5>
+            <blockquote class="blockquote">
+              <p class="mb-2">“The monthly walks and ID sessions have levelled up my skills. Great people, great gear.”</p>
+              <footer class="blockquote-footer">Ava N., Victoria</footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="p-4 rounded nl h-100">
+          <h5 class="mb-2">Get the newsletter</h5>
+          <p class="text-muted">Seasonal migration alerts, gear deals, and event invites.</p>
+          <form class="row g-2">
+            <div class="col-12 col-sm-8">
+              <label class="visually-hidden" for="nlEmail">Email</label>
+              <input id="nlEmail" type="email" class="form-control" placeholder="name@example.com">
+            </div>
+            <div class="col-12 col-sm-4 d-grid">
+              <button class="btn btn-success" type="button">Subscribe</button>
+            </div>
+            <div class="col-12">
+              <small class="text-muted">We respect your inbox. Unsubscribe anytime.</small>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer mt-5 py-4">
+    <div class="container small d-flex flex-column flex-lg-row justify-content-between gap-2">
+      <span>© 2025 Butterfly Hub</span>
+      <span>123 Garden Lane, Melbourne VIC 3000 • (03) 9000 0000 • info@butterflyhub.au • Mon–Fri 9–5</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

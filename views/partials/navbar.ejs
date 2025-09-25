@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg shadow-sm sticky-top bg-white border-bottom">
+  <div class="container">
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold text-primary d-flex align-items-center gap-2" href="/">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Bluesky_butterfly-logo.svg" alt="logo" style="height:32px">
+      <span class="fs-5"><%= siteTitle %></span>
+    </a>
+
+    <!-- Mobile toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu -->
+    <div id="mainNav" class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link <% if (title==='Home') { %>active fw-semibold text-primary border-bottom border-2 border-primary<% } %>" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link <% if (title==='Products') { %>active fw-semibold text-primary border-bottom border-2 border-primary<% } %>" href="/products">Products</a></li>
+        <li class="nav-item"><a class="nav-link <% if (title==='Donate') { %>active fw-semibold text-primary border-bottom border-2 border-primary<% } %>" href="/donate">Donate</a></li>
+        <li class="nav-item"><a class="nav-link <% if (title==='News') { %>active fw-semibold text-primary border-bottom border-2 border-primary<% } %>" href="/news">News</a></li>
+        <li class="nav-item"><a class="nav-link <% if (title==='Contact') { %>active fw-semibold text-primary border-bottom border-2 border-primary<% } %>" href="/contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link <% if (title==='Customer Feedback') { %>active fw-semibold text-primary border-bottom border-2 border-primary<% } %>" href="/feedback">Feedback</a></li>
+
+        <% if (currentUser) { %>
+          <li class="nav-item"><a class="nav-link <% if (title==='All Feedbacks') { %>active fw-semibold text-primary border-bottom border-2 border-primary<% } %>" href="/all-feedbacks">All Feedbacks</a></li>
+        <% } %>
+
+        <li class="nav-item"><a class="nav-link <% if (title==='Gallery') { %>active fw-semibold text-primary border-bottom border-2 border-primary<% } %>" href="/gallery">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link <% if (title==='Sketch Studio') { %>active fw-semibold text-primary border-bottom border-2 border-primary<% } %>" href="/studio">Studio</a></li>
+        <li class="nav-item"><a class="nav-link <% if (title==='How It Works') { %>active fw-semibold text-primary border-bottom border-2 border-primary<% } %>" href="/docs">Docs</a></li>
+      </ul>
+
+      <!-- Right side -->
+      <div class="d-flex align-items-center gap-3">
+        <% if (currentUser) { %>
+          <span class="navbar-text small text-success">
+            Logged in as <strong><%= currentUser.display || currentUser.username %></strong>
+          </span>
+          <form method="POST" action="/logout" class="m-0">
+            <button class="btn btn-outline-danger btn-sm">Logout</button>
+          </form>
+        <% } else { %>
+          <a class="btn btn-primary btn-sm" href="/login">Login</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

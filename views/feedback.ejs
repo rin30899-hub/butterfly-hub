@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= title %> – <%= siteTitle %></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: linear-gradient(120deg,#f6d365,#fda085); }
+    .form-card { background:#ffffffdd; border-radius:16px; padding:2rem; }
+      .brand-bar {
+    background: #2B2E32 !important;
+    border-bottom: 1px solid rgba(0,0,0,.08);
+  }
+  .brand-bar .navbar-brand,
+  .brand-bar .nav-link,
+  .brand-bar .navbar-text { color: white !important; }
+  .brand-bar .navbar-toggler { border-color: rgba(0,0,0,.1); }
+  .brand-bar .navbar-toggler-icon { filter: invert(0); } /* dark icon on white */
+  </style>
+</head>
+<body>
+  <%- include('partials/navbar') %>
+
+    <main class="container py-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="form-card shadow">
+          <h2 class="text-center text-primary mb-4">Feedback Form</h2>
+
+          <form method="POST" action="/store-feedback">
+            <div class="mb-3">
+              <label class="form-label">Your Name</label>
+              <input class="form-control" type="text" name="name">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input class="form-control" type="email" name="email" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Item Name</label>
+              <select class="form-select" name="itemName">
+                <option>Field Guide</option>
+                <option>Collector Net</option>
+                <option>Binoculars</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Date Purchased</label>
+              <input class="form-control" type="date" name="datePurchased" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Rating</label>
+              <select class="form-select" name="rating" required>
+                <option value="" selected>Choose rating</option>
+                <option value="1">1</option><option value="2">2</option>
+                <option value="3">3</option><option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" name="message" rows="4" placeholder="Your feedback..."></textarea>
+            </div>
+
+            <div class="d-flex gap-2">
+              <button class="btn btn-success" type="submit">Submit</button>
+              <a class="btn btn-outline-secondary" href="/all-feedbacks">All Feedbacks</a>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

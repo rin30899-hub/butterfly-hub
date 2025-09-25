@@ -1,0 +1,29 @@
+:root{ --brand:#157347; --pale:#e9f5ee; }
+body{scroll-behavior:smooth}
+.brand-bar{background:var(--brand);}
+.brand-bar .navbar-brand,.brand-bar .nav-link,.brand-bar .navbar-text{color:#fff!important}
+.brand-bar .nav-link.active{font-weight:600;}
+.hero{background:var(--pale)}
+.footer{background:var(--brand); color:#fff}
+.hero-cta{max-width:760px}
+.card img{object-fit:cover}
+/* Contact form error messages (Task 5.3D requirement) */
+.error-msg{font-size:.9rem; color:#dc3545; min-width:14ch}
+.is-invalid{border-color:#dc3545!important; box-shadow:0 0 0 .1rem rgba(220,53,69,.15)!important}
+
+
+/* minor helpers */
+.nav-gap{gap:.5rem}
+
+
+/* Responsive tweaks */
+@media (max-width: 576px){
+.navbar form[role="search"]{width:100%; margin-top:.5rem}
+}
+
+/* Logo & navbar polish */
+.brand-logo{ width:32px; height:32px; object-fit:contain }
+.brand-bar.navbar-dark .navbar-toggler{ border-color: rgba(255,255,255,.35) }
+.brand-bar.navbar-dark .navbar-toggler-icon{
+  background-image: var(--bs-navbar-toggler-icon-bg);
+}

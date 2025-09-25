@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= title %> – <%= siteTitle %></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+  </style>
+</head>
+<body>
+  <%- include('partials/navbar') %>
+
+  <main class="container py-4">
+    <h2 class="mb-3">Feedback Summary</h2>
+
+    <% dist.forEach(row => { %>
+      <div class="mb-2">
+        <div class="d-flex justify-content-between">
+          <strong><%= row.star %> Star</strong>
+          <span><%= row.count %> (<%= row.pct %>%)</span>
+        </div>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width:<%= row.pct %>%"></div>
+        </div>
+      </div>
+    <% }) %>
+
+    <hr class="my-4">
+    <h3 class="mb-3">Individual Feedbacks</h3>
+
+    <% rows.forEach(fb => { %>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= fb.name || 'Anonymous' %>
+            — <% for (let i=0; i<fb.rating; i++) { %>★<% } %>
+          </h5>
+          <p class="card-subtitle text-muted mb-2">Item: <%= fb.item %> · Date: <%= fb.date %></p>
+          <p class="card-text"><%= fb.message %></p>
+          <p class="card-text text-muted small mb-0">Email: <%= fb.email %></p>
+        </div>
+      </div>
+    <% }) %>
+  </main>
+</body>
+</html>

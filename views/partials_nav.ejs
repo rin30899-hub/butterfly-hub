@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand bg-dark navbar-dark px-3">
+  <a class="navbar-brand" href="/">Site</a>
+  <div class="ms-3">
+    <a class="btn btn-outline-light btn-sm me-2" href="/products">Products</a>
+    <a class="btn btn-outline-light btn-sm me-2" href="/feedback">Feedback</a>
+    <a class="btn btn-outline-light btn-sm me-2" href="/all-feedbacks">All Feedbacks</a>
+  </div>
+  <div class="ms-auto">
+    <% if (user) { %>
+      <span class="text-light me-2">Hi, <%= user.username %></span>
+      <form class="d-inline" method="POST" action="/logout">
+        <button class="btn btn-warning btn-sm">Logout</button>
+      </form>
+    <% } else { %>
+      <a class="btn btn-primary btn-sm" href="/login">Login</a>
+    <% } %>
+  </div>
+</nav>
